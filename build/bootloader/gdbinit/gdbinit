@@ -1,0 +1,2 @@
+source /home/mati/esp/esp-zigbee-sdk/examples/esp_zigbee_HA_sample/HA_thermostat/build/bootloader/gdbinit/symbols
+source /home/mati/esp/esp-zigbee-sdk/examples/esp_zigbee_HA_sample/HA_thermostat/build/bootloader/gdbinit/connect

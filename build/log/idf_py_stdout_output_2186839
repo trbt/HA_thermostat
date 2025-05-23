@@ -1,0 +1,207 @@
+Command: /home/mati/.espressif/python_env/idf6.0_py3.13_env/bin/python /home/mati/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32h2 --revision 0 --decode-panic backtrace /home/mati/esp/esp-zigbee-sdk/examples/esp_zigbee_HA_sample/HA_thermostat/build/thermostat.elf /home/mati/esp/esp-zigbee-sdk/examples/esp_zigbee_HA_sample/HA_thermostat/build/bootloader/bootloader.elf -m '/home/mati/.espressif/python_env/idf6.0_py3.13_env/bin/python' '/home/mati/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+[0;32mI (113) esp_image: segment 1: paddr=0001fd60 vaddr=40800000 sizeI (279) cpu_start: Unicore app[0m
+ESP-ROM:esp32h2-20221101
+Build:Nov  1 2022
+rst:0x15 (USB_UART_HPSYS),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40000fde
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x408460f0,len:0x1700
+load:0x4083c2d0,len:0xf78
+load:0x4083efd0,len:0x2fdc
+entry 0x4083c2da
+[0;32mI (23) boot: ESP-IDF v5.5-dev-3822-g27d68f57e6 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time May 22 2025 22:33:13[0m
+[0;32mI (25) boot: chip revision: v0.1[0m
+[0;32mI (25) boot: efuse block revision: v0.3[0m
+[0;32mI (28) boot.esp32h2: SPI Speed      : 64MHz[0m
+[0;32mI (32) boot.esp32h2: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32h2: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (47) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (66) boot:  2 factory          factory app      00 00 00010000 000e1000[0m
+[0;32mI (72) boot:  3 zb_storage       Unknown data     01 81 000f1000 00004000[0m
+[0;32mI (79) boot:  4 zb_fct           Unknown data     01 81 000f5000 00000400[0m
+[0;32mI (86) boot: End of partition table[0m
+[0;32mI (89) esp_image: segment 0: paddr=00010020 vaddr=42078020 size=0fd38h ( 64824) map[0m
+[0;32mI (113) esp_image: segment 1: paddr=0001fd60 vaddr=40800000 size=002b8h (   696) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=755ech (480748) map[0m
+[0;32mI (241) esp_image: segment 3: paddr=00095614 vaddr=408002b8 size=0da2ch ( 55852) load[0m
+[0;32mI (258) esp_image: segment 4: paddr=000a3048 vaddr=4080dcf0 size=01dbch (  7612) load[0m
+[0;32mI (266) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (267) boot: Disabling RNG early entropy source...[0m
+[0;32mI (277) cpu_start: Unicore app[0m
+[0;32mI (285) cpu_start: Pro cpu start user code[0m
+[0;32mI (286) cpu_start: cpu freq: 96000000 Hz[0m
+[0;32mI (286) app_init: Application information:[0m
+[0;32mI (286) app_init: Project name:     thermostat[0m
+[0;32mI (289) app_init: App version:      e46bf8c-dirty[0m
+[0;32mI (294) app_init: Compile time:     May 22 2025 22:33:06[0m
+[0;32mI (299) app_init: ELF file SHA256:  290b86745...[0m
+[0;32mI (303) app_init: ESP-IDF:          v5.5-dev-3822-g27d68f57e6[0m
+[0;32mI (309) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (313) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (317) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (320) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (327) heap_init: At 40814A70 len 00038910 (226 KiB): RAM[0m
+[0;32mI (332) heap_init: At 4084D380 len 00002B60 (10 KiB): RAM[0m
+[0;32mI (337) heap_init: At 50000000 len 00000FE8 (3 KiB): RTCRAM[0m
+[0;33mW (343) spi_flash: GigaDevice detected but related driver is not linked, please check option `SPI_FLASH_SUPPORT_GD_CHIP`[0m
+[0;32mI (353) spi_flash: detected chip: generic[0m
+[0;32mI (357) spi_flash: flash io: dio[0m
+[0;33mW (360) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (372) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (378) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (385) main_task: Started on CPU0[0m
+[0;32mI (385) main_task: Calling app_main()[0m
+[0;32mI (405) phy: phy_version: 322,2, 823e7f8, Mar  3 2025, 16:09:11[0m
+[0;32mI (405) phy: libbtbb version: e9c8b26, Mar  3 2025, 16:09:24[0m
+[0;32mI (415) main_task: Returned from app_main()[0m
+[0;32mI (545) ESP_ZB_THERMOSTAT: ZDO signal: ZDO Config Ready (0x17), status: ESP_FAIL[0m
+[0;32mI (545) ESP_ZB_THERMOSTAT: Initialize Zigbee stack[0m
+[0;32mI (545) ESP_ZB_THERMOSTAT: Deferred driver initialization successful[0m
+[0;32mI (555) ESP_ZB_THERMOSTAT: Device started up in factory-reset mode[0m
+[0;32mI (555) ESP_ZB_THERMOSTAT: Start network formation[0m
+[0;33mW (715) ESP_ZB_THERMOSTAT: Network(0x58c0) closed, devices joining not allowed.[0m
+[0;32mI (715) ESP_ZB_THERMOSTAT: Formed network successfully (Extended PAN ID: 48:31:b7:ff:fe:c2:a4:5b, PAN ID: 0x58c0, Channel:13, Short Address: 0x0000)[0m
+[0;32mI (1325) ESP_ZB_THERMOSTAT: Network(0x58c0) is open for 180 seconds[0m
+[0;32mI (1325) ESP_ZB_THERMOSTAT: Network steering started[0m
+[0;32mI (17485) ESP_ZB_THERMOSTAT: ZDO signal: NLME Status Indication (0x32), status: ESP_OK[0m
+[0;32mI (18495) ESP_ZB_THERMOSTAT: ZDO signal: NLME Status Indication (0x32), status: ESP_OK[0m
+[0;32mI (19495) ESP_ZB_THERMOSTAT: ZDO signal: NLME Status Indication (0x32), status: ESP_OK[0m
+[0;32mI (23805) ESP_ZB_THERMOSTAT: ZDO signal: NLME Status Indication (0x32), status: ESP_OK[0m
+[0;32mI (26925) ESP_ZB_THERMOSTAT: ZDO signal: NWK Device Associated (0x12), status: ESP_OK[0m
+[0;32mI (26935) ESP_ZB_THERMOSTAT: ZDO signal: ZDO Device Update (0x30), status: ESP_OK[0m
+[0;32mI (27455) ESP_ZB_THERMOSTAT: New device commissioned or rejoined (short: 0x9d94)[0m
+[0;32mI (27575) ESP_ZB_THERMOSTAT: Found temperature sensor[0m
+[0;32mI (27575) ESP_ZB_THERMOSTAT: Request temperature sensor to bind us[0m
+[0;32mI (27575) ESP_ZB_THERMOSTAT: Bind temperature sensor[0m
+[0;32mI (27585) ESP_ZB_THERMOSTAT: Successfully bind the temperature sensor from address(0x9d94) on endpoint(1)[0m
+[0;32mI (27705) ESP_ZB_THERMOSTAT: The temperature sensor from address(0x9d94) on endpoint(1) successfully binds us[0m
+[0;32mI (27715) ESP_ZB_THERMOSTAT: Read attribute response: from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x0)[0m
+[0;32mI (27715) ESP_ZB_THERMOSTAT: Read attribute response: status(0), cluster(0x0), attribute(0x4), type(0x42), value(16)[0m
+[0;32mI (27725) ESP_ZB_THERMOSTAT: Peer Manufacturer is "_TZ3000_dowj6gyi"[0m
+[0;32mI (27735) ESP_ZB_THERMOSTAT: Read attribute response: status(0), cluster(0x0), attribute(0x5), type(0x42), value(6)[0m
+[0;32mI (27745) ESP_ZB_THERMOSTAT: Peer Model is "TS0201"[0m
+[0;32mI (28885) ESP_ZB_THERMOSTAT: ZDO signal: ZDO Device Authorized (0x2f), status: ESP_OK[0m
+[0;32mI (28955) ESP_ZB_THERMOSTAT: Network(0x58c0) is open for 180 seconds[0m
+[0;32mI (34005) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (34005) ESP_ZB_THERMOSTAT: Measured Value is 26.27 degrees Celsius[0m
+[0;32mI (34125) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (39005) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (39005) ESP_ZB_THERMOSTAT: Measured Value is 26.35 degrees Celsius[0m
+[0;32mI (39135) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (44005) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (44015) ESP_ZB_THERMOSTAT: Measured Value is 26.34 degrees Celsius[0m
+[0;32mI (44135) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (49015) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (49015) ESP_ZB_THERMOSTAT: Measured Value is 26.31 degrees Celsius[0m
+[0;32mI (49135) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (54015) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (54015) ESP_ZB_THERMOSTAT: Measured Value is 26.30 degrees Celsius[0m
+[0;32mI (54145) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (59015) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (59025) ESP_ZB_THERMOSTAT: Measured Value is 26.28 degrees Celsius[0m
+[0;32mI (59145) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (64025) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (64025) ESP_ZB_THERMOSTAT: Measured Value is 26.29 degrees Celsius[0m
+[0;32mI (64145) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (69025) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (69025) ESP_ZB_THERMOSTAT: Measured Value is 26.22 degrees Celsius[0m
+[0;32mI (69145) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (74025) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (74025) ESP_ZB_THERMOSTAT: Measured Value is 26.23 degrees Celsius[0m
+[0;32mI (74155) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (79025) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (79035) ESP_ZB_THERMOSTAT: Measured Value is 26.23 degrees Celsius[0m
+[0;32mI (79155) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (84035) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (84035) ESP_ZB_THERMOSTAT: Measured Value is 26.40 degrees Celsius[0m
+[0;32mI (84155) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (89035) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (89035) ESP_ZB_THERMOSTAT: Measured Value is 26.74 degrees Celsius[0m
+[0;32mI (89155) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (94055) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (94055) ESP_ZB_THERMOSTAT: Measured Value is 27.13 degrees Celsius[0m
+[0;32mI (94185) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (114055) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (114055) ESP_ZB_THERMOSTAT: Measured Value is 28.26 degrees Celsius[0m
+[0;32mI (114185) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (134055) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (134055) ESP_ZB_THERMOSTAT: Measured Value is 29.06 degrees Celsius[0m
+[0;32mI (134185) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (154055) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (174055) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (174055) ESP_ZB_THERMOSTAT: Measured Value is 28.77 degrees Celsius[0m
+[0;32mI (194055) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (194055) ESP_ZB_THERMOSTAT: Measured Value is 28.33 degrees Celsius[0m
+[0;32mI (194175) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;33mW (208965) ESP_ZB_THERMOSTAT: Network(0x58c0) closed, devices joining not allowed.[0m
+[0;32mI (214055) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (214055) ESP_ZB_THERMOSTAT: Measured Value is 27.92 degrees Celsius[0m
+[0;32mI (234055) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (234055) ESP_ZB_THERMOSTAT: Measured Value is 27.54 degrees Celsius[0m
+[0;32mI (254055) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (254055) ESP_ZB_THERMOSTAT: Measured Value is 27.19 degrees Celsius[0m
+[0;32mI (274045) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (274045) ESP_ZB_THERMOSTAT: Measured Value is 26.89 degrees Celsius[0m
+[0;32mI (294045) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (294045) ESP_ZB_THERMOSTAT: Measured Value is 26.60 degrees Celsius[0m
+[0;32mI (314045) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (314045) ESP_ZB_THERMOSTAT: Measured Value is 26.37 degrees Celsius[0m
+[0;32mI (334055) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (334055) ESP_ZB_THERMOSTAT: Measured Value is 26.10 degrees Celsius[0m
+[0;32mI (354055) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (354055) ESP_ZB_THERMOSTAT: Measured Value is 25.90 degrees Celsius[0m
+[0;32mI (374055) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (374055) ESP_ZB_THERMOSTAT: Measured Value is 25.64 degrees Celsius[0m
+[0;32mI (394055) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (394055) ESP_ZB_THERMOSTAT: Measured Value is 25.48 degrees Celsius[0m
+[0;32mI (414045) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (414055) ESP_ZB_THERMOSTAT: Measured Value is 25.30 degrees Celsius[0m
+[0;32mI (434045) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (434045) ESP_ZB_THERMOSTAT: Measured Value is 25.16 degrees Celsius[0m
+[0;32mI (454045) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (454055) ESP_ZB_THERMOSTAT: Measured Value is 25.01 degrees Celsius[0m
+[0;32mI (474045) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (474055) ESP_ZB_THERMOSTAT: Measured Value is 24.89 degrees Celsius[0m
+[0;32mI (494045) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (494045) ESP_ZB_THERMOSTAT: Measured Value is 24.77 degrees Celsius[0m
+[0;32mI (494175) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (534035) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (534035) ESP_ZB_THERMOSTAT: Measured Value is 24.59 degrees Celsius[0m
+[0;32mI (574035) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (574035) ESP_ZB_THERMOSTAT: Measured Value is 24.40 degrees Celsius[0m
+[0;32mI (594035) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (594035) ESP_ZB_THERMOSTAT: Measured Value is 24.29 degrees Celsius[0m
+[0;32mI (654025) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (654025) ESP_ZB_THERMOSTAT: Measured Value is 24.12 degrees Celsius[0m
+[0;32mI (693995) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (693995) ESP_ZB_THERMOSTAT: Measured Value is 23.97 degrees Celsius[0m
+[0;32mI (694115) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (714015) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (714025) ESP_ZB_THERMOSTAT: Measured Value is 23.85 degrees Celsius[0m
+[0;32mI (774015) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (774015) ESP_ZB_THERMOSTAT: Measured Value is 23.72 degrees Celsius[0m
+[0;32mI (834005) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (834005) ESP_ZB_THERMOSTAT: Measured Value is 23.60 degrees Celsius[0m
+[0;32mI (894005) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (894005) ESP_ZB_THERMOSTAT: Measured Value is 23.46 degrees Celsius[0m
+[0;32mI (953985) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (953985) ESP_ZB_THERMOSTAT: Measured Value is 23.30 degrees Celsius[0m
+[0;32mI (1033965) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (1033965) ESP_ZB_THERMOSTAT: Measured Value is 23.15 degrees Celsius[0m
+[0;32mI (1113945) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (1113945) ESP_ZB_THERMOSTAT: Measured Value is 23.04 degrees Celsius[0m
+[0;32mI (1213925) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (1213925) ESP_ZB_THERMOSTAT: Measured Value is 22.93 degrees Celsius[0m
+[0;32mI (1293835) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (1293845) ESP_ZB_THERMOSTAT: Measured Value is 22.87 degrees Celsius[0m
+[0;32mI (1293965) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x405)[0m
+[0;32mI (1433865) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (1433865) ESP_ZB_THERMOSTAT: Measured Value is 22.76 degrees Celsius[0m
+[0;32mI (1493855) ESP_ZB_THERMOSTAT: Received report from address(0x9d94) src endpoint(1) to dst endpoint(1) cluster(0x402)[0m
+[0;32mI (1493855) ESP_ZB_THERMOSTAT: Measured Value is 22.65 degrees Celsius[0m

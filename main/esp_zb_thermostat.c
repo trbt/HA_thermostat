@@ -19,6 +19,7 @@
 #include "nvs_flash.h"
 #include "esp_log.h"
 #include "esp_check.h"
+#include "esp_timer.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "ha/esp_zigbee_ha_standard.h"
@@ -28,6 +29,10 @@
 #if defined ZB_ED_ROLE
 #error Define ZB_COORDINATOR_ROLE in idf.py menuconfig to compile thermostat source code.
 #endif
+
+static uint32_t lastTemperatureReadingMS;
+static uint32_t lastHumidityReadingMS;
+
 
 static float zb_s16_to_temperature(int16_t value)
 {
@@ -321,7 +326,10 @@ static void esp_app_zb_attribute_handler(uint16_t cluster_id, const esp_zb_zcl_a
         if (attribute->id == ESP_ZB_ZCL_ATTR_TEMP_MEASUREMENT_VALUE_ID &&
             attribute->data.type == ESP_ZB_ZCL_ATTR_TYPE_S16) {
             int16_t value = attribute->data.value ? *(int16_t *)attribute->data.value : 0;
-            ESP_LOGI(TAG, "Measured Value is %.2f degrees Celsius", zb_s16_to_temperature(value));
+            uint32_t time = esp_timer_get_time() / 1000;
+            uint32_t age = time - lastTemperatureReadingMS;
+            lastTemperatureReadingMS = time;
+            ESP_LOGI(TAG, "Measured Value is %.2f degrees Celsius %d seconds since last report", zb_s16_to_temperature(value), age / 1000);                        
         }
         if (attribute->id == ESP_ZB_ZCL_ATTR_TEMP_MEASUREMENT_MIN_VALUE_ID &&
             attribute->data.type == ESP_ZB_ZCL_ATTR_TYPE_S16) {
@@ -345,7 +353,10 @@ static void esp_app_zb_attribute_handler(uint16_t cluster_id, const esp_zb_zcl_a
         if (attribute->id == ESP_ZB_ZCL_ATTR_REL_HUMIDITY_MEASUREMENT_VALUE_ID &&
             attribute->data.type == ESP_ZB_ZCL_ATTR_TYPE_U16) {
             uint16_t value = attribute->data.value ? *(uint16_t *)attribute->data.value : 0;
-            ESP_LOGI(TAG, "Measured RH Value is %.2f percent", 1.0 * value / 100);
+            uint32_t time = esp_timer_get_time() / 1000;
+            uint32_t age = time - lastHumidityReadingMS;
+            lastHumidityReadingMS = time;
+            ESP_LOGI(TAG, "Measured RH Value is %.2f percent %d seconds since last report", 1.0 * value / 100, age / 1000);
         }
         if (attribute->id == ESP_ZB_ZCL_ATTR_REL_HUMIDITY_MEASUREMENT_MIN_VALUE_ID &&
             attribute->data.type == ESP_ZB_ZCL_ATTR_TYPE_U16) {
@@ -481,12 +492,15 @@ static void esp_zb_task(void *pvParameters)
     esp_zb_stack_main_loop();
 }
 
-void app_main(void)
-{
+void app_main(void) {
     esp_zb_platform_config_t config = {
         .radio_config = ESP_ZB_DEFAULT_RADIO_CONFIG(),
         .host_config = ESP_ZB_DEFAULT_HOST_CONFIG(),
     };
+
+    lastTemperatureReadingMS = esp_timer_get_time() / 1000;
+    lastHumidityReadingMS  = esp_timer_get_time() / 1000;
+
     ESP_ERROR_CHECK(nvs_flash_init());
     ESP_ERROR_CHECK(esp_zb_platform_config(&config));
     xTaskCreate(esp_zb_task, "Zigbee_main", 4096, NULL, 5, NULL);

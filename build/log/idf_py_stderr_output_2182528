@@ -1,2 +1,0 @@
-Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/home/mati/.espressif/python_env/idf6.0_py3.13_env/bin/python -DESP_PLATFORM=1 -DIDF_TARGET=esp32h2 -DCCACHE_ENABLE=0 /home/mati/esp/esp-zigbee-sdk/examples/esp_zigbee_HA_sample/HA_thermostat
-27d68f57e6-e46bf8c-1.6.4-2025-05-22 19:32:00 UTC
